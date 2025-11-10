@@ -519,7 +519,7 @@ footer .top .nav__footer__left {
 .lang__footer .img {
     height: 3rem;
     width: 3rem;
-    background-image: url(/imgs/ita.png);
+    background-image: url(../imgs/ita.png);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
