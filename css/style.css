@@ -3,9 +3,11 @@
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
+    
 }
 
 body {
+    color: var(--color-black);
     overflow-x: hidden;
     font-family: "Lato", sans-serif;
 }
@@ -26,6 +28,7 @@ ul {
     --section-spacing-horizontal: 4rem;
     --section-spacing-vertical: 12rem;
     --container-width: 126rem;
+    --color-black: #23272a;
 }
 
 header {
@@ -36,7 +39,7 @@ header {
 
 /* NAV @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
-nav {
+header nav {
     margin: 0 auto;
     width: 126rem;
     max-width: 100vw;
@@ -84,7 +87,7 @@ nav > a {
     |__button
 */
 
-ul {
+header nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,7 +132,7 @@ button:hover {
 }
 
 button:active {
-    box-shadow: 0 1rem 3rem -1.4rem black;
+    box-shadow: 0 1rem 3rem -1.4rem var(--color-black);
     transition: all 0.2 ease-out;
 }
 
@@ -184,12 +187,11 @@ section:not(:nth-of-type(5)) .container {
     margin-bottom: 4rem;
 }
 
-.container .text{
+.container .text {
     justify-content: center;
     display: flex;
     flex-direction: column;
     padding: 0 10rem;
-
 }
 
 .h1__section__02,
@@ -205,7 +207,6 @@ section:not(:nth-of-type(5)) .container {
 .p__section__04 {
     font-size: 2rem;
     text-align: start;
-
 }
 
 .p__welcome {
@@ -238,12 +239,12 @@ section:not(:nth-of-type(5)) .container {
 
 .download__welcome:hover {
     color: #7289da;
-    box-shadow: 0 1rem 3rem -1.4rem black;
+    box-shadow: 0 1rem 3rem -1.4rem var(--color-black);
 }
 
 .open__welcome:hover {
     background-color: #36393f;
-    box-shadow: 0 1rem 3rem -1.4rem black;
+    box-shadow: 0 1rem 3rem -1.4rem var(--color-black);
 }
 
 /* SECTION 2 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
@@ -267,7 +268,7 @@ section:not(:nth-of-type(5)) .container {
 
 /* SECTION 3 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
-.section__03{
+.section__03 {
     background-color: #f6f6f6;
 }
 
@@ -333,9 +334,7 @@ section:not(:nth-of-type(5)) .container {
     font-size: 4.8rem;
     text-align: center;
     margin-bottom: 2.4rem;
-
 }
-
 
 .p__section__05 {
     text-align: center;
@@ -365,7 +364,7 @@ section:not(:nth-of-type(5)) .container {
     padding: calc(var(--section-spacing-vertical) / 2) calc(var(--section-spacing-horizontal) / 2);
 }
 
-.h1__section__06{
+.h1__section__06 {
     padding: 4rem 4rem 0;
     margin-bottom: 5rem;
     background-image: url(../svgs/stars.svg);
@@ -374,29 +373,27 @@ section:not(:nth-of-type(5)) .container {
     font-size: 3.2rem;
 }
 
-.section__06 .links__welcome a{
+.section__06 .links__welcome a {
     background-color: #7289da;
     color: #f6f6f6;
     margin-bottom: 10rem;
-    
 }
 
-.section__06 .container .text{
+.section__06 .container .text {
     margin: 0 auto;
     width: max-content;
 }
 
-
 /* FOOTER @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
 footer {
-    height: 60vh;
+    min-height: 60vh;
     width: 100vw;
     background-color: rgb(47, 45, 45);
     justify-content: center;
 }
 
-footer .container {
+footer nav {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -407,27 +404,42 @@ footer .container {
     padding: 8rem 0;
 }
 
-footer .container .bottom {
+/* TODO: TOGLIERE FLEX QUA (per ora c'e' per lo stretch) */
+footer nav .top {
+    width: 100%;
+    flex: 6 1 0;
+    display: flex;
+    margin-bottom: 5rem;
+}
+
+footer nav .bottom {
+    border-top: .1rem solid #5865f2;
     width: 100%;
     flex: 2 1 0;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    padding-top: 5rem;
 }
 
-footer .container .bottom .left,
-footer .container .bottom .right {
+footer nav .bottom .left{
+    height: 100%;
+    width: 12rem;
+}
+
+footer nav .bottom .nav__footer__left,
+footer nav .bottom .nav__footer__right {
     height: 100%;
     width: 30rem;
     display: flex;
     align-items: flex-end;
 }
 
-footer .container .bottom .right {
+footer nav .bottom .nav__footer__right {
     justify-content: flex-end;
 }
 
-footer .container .bottom .left a {
+footer nav .bottom .nav__footer__left a {
     height: 3rem;
     width: 12rem;
     display: flex;
@@ -435,30 +447,92 @@ footer .container .bottom .left a {
     align-items: flex-end;
 }
 
-footer .container .bottom .right .btn button {
+footer nav .bottom .nav__footer__right .btn button {
     background-color: #5865f2;
     color: white;
 }
 
-footer .container .top {
-    width: 100%;
-    flex: 6 1 0;
-    display: flex;
-}
-
-footer .top .right {
+footer .top .nav__footer__right {
     flex: 2;
     display: flex;
 }
 
-footer .top .left {
+footer .top .nav__footer__left {
     flex: 1;
-    background-color: #5865f2;
 }
 
-footer .top .right li {
-    height: 100%;
+.nav__footer__right > ul {
     flex: 1;
-    background-color: #f32626;
-    border: 0.1rem dashed;
+}
+
+.nav__footer__right > ul > *{
+    margin-bottom: 1.2rem;
+}
+
+.nav__footer__left .h1__footer {
+    font-family: "Bungee Inline", sans-serif;
+    font-size: 3.2rem;
+    color: #5865f2;
+    line-height: 0.9;
+    margin-bottom: 2rem;
+}
+
+.lang__footer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+
+}
+
+.lang__footer .img {
+    height: 3rem;
+    width: 3rem;
+    background-image: url(/imgs/ita.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.select__country {
+    margin-left: .5rem;
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+.p__curr__country{
+    color: white;
+    margin-left: 1rem;
+    font-size: 1.4rem;
+}
+
+.contacts__footer{
+    width: max-content;
+    margin-left: -.3rem;
+}
+
+.contacts__footer li{
+    padding-right: 2rem;
+    display: inline-block;
+}
+
+.contacts__footer a{
+    display: block;
+}
+
+.contacts__footer a *{
+    font-size: 2.2rem;
+    
+}
+
+.nav__footer__right .li__desc{
+    color: #5865f2;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.nav__footer__right a{
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 400;
 }
