@@ -3,11 +3,10 @@
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
-    
 }
 
 body {
-    color: var(--color-black);
+    color: var(--color-blackish);
     overflow-x: hidden;
     font-family: "Lato", sans-serif;
 }
@@ -28,7 +27,8 @@ ul {
     --section-spacing-horizontal: 4rem;
     --section-spacing-vertical: 12rem;
     --container-width: 126rem;
-    --color-black: #23272a;
+    --color-blackish: #23272a;
+    --color-whitish: #f6f6f6;
 }
 
 header {
@@ -132,13 +132,14 @@ button:hover {
 }
 
 button:active {
-    box-shadow: 0 1rem 3rem -1.4rem var(--color-black);
+    box-shadow: 0 1rem 3rem -1.4rem var(--color-blackish);
     transition: all 0.2 ease-out;
 }
 
 /* SECTION GENERIC @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
 section {
+    position: relative;
     width: 100vw;
     height: 100vh;
 }
@@ -159,6 +160,7 @@ section:not(:nth-of-type(5)) .container {
     padding-right: 3rem;
 }
 
+.section__welcome,
 .paired__container__01 .img,
 .paired__container__02 .img,
 .paired__container__03 .img,
@@ -172,7 +174,8 @@ section:not(:nth-of-type(5)) .container {
 
 .section__welcome {
     background-image: url(../imgs/jumbo.png);
-    background-size: contain;
+    background-size: 145%;
+    position: initial;
 }
 
 .container__welcome {
@@ -239,15 +242,36 @@ section:not(:nth-of-type(5)) .container {
 
 .download__welcome:hover {
     color: #7289da;
-    box-shadow: 0 1rem 3rem -1.4rem var(--color-black);
+    box-shadow: 0 1rem 3rem -1.4rem var(--color-blackish);
 }
 
 .open__welcome:hover {
     background-color: #36393f;
-    box-shadow: 0 1rem 3rem -1.4rem var(--color-black);
+    box-shadow: 0 1rem 3rem -1.4rem var(--color-blackish);
 }
 
 /* SECTION 2 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+.section__02 {
+    position: relative;
+}
+
+.absolute__wave svg{
+    position: absolute;
+    content: "";
+    left: 50%;
+    transform: translate(-50%, 10rem) scaleY(-1);
+    width: 100%;
+    height: 15rem;
+    bottom: 0;
+    z-index: 10;
+}
+
+.absolute__wave__2{
+    fill: #fff
+}
+
+.absolute__wave 
 
 .section__02 .container {
     display: flex;
@@ -280,6 +304,10 @@ section:not(:nth-of-type(5)) .container {
     flex: 2;
 }
 
+.absolute__wave__3{
+    fill: var(--color-whitish)
+}
+
 .section__03 .container {
     display: flex;
     justify-content: center;
@@ -304,6 +332,10 @@ section:not(:nth-of-type(5)) .container {
     flex: 2;
 }
 
+.absolute__wave__4{
+    fill: white;
+}
+
 .paired__container__03 .img {
     background-image: url(../svgs/item3.svg);
 }
@@ -311,7 +343,7 @@ section:not(:nth-of-type(5)) .container {
 /* SECTION 5 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
 .section__05 {
-    height: 120vh;
+    min-height: 100rem;
     background-color: #f6f6f6;
 }
 
@@ -319,7 +351,6 @@ section:not(:nth-of-type(5)) .container {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
     height: 100%;
     width: var(--container-width);
     padding: var(--section-spacing-vertical) var(--section-spacing-horizontal);
@@ -410,19 +441,21 @@ footer nav .top {
     flex: 6 1 0;
     display: flex;
     margin-bottom: 5rem;
+    padding: 0 5rem;
 }
 
 footer nav .bottom {
-    border-top: .1rem solid #5865f2;
+    border-top: 0.1rem solid #5865f2;
     width: 100%;
     flex: 2 1 0;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     padding-top: 5rem;
+    padding: 5rem 5rem 0;
 }
 
-footer nav .bottom .left{
+footer nav .bottom .left {
     height: 100%;
     width: 12rem;
 }
@@ -465,7 +498,7 @@ footer .top .nav__footer__left {
     flex: 1;
 }
 
-.nav__footer__right > ul > *{
+.nav__footer__right > ul > * {
     margin-bottom: 1.2rem;
 }
 
@@ -481,7 +514,6 @@ footer .top .nav__footer__left {
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
-
 }
 
 .lang__footer .img {
@@ -494,45 +526,49 @@ footer .top .nav__footer__left {
 }
 
 .select__country {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
     border: none;
     background-color: transparent;
     color: white;
 }
 
-.p__curr__country{
+.p__curr__country {
     color: white;
     margin-left: 1rem;
     font-size: 1.4rem;
 }
 
-.contacts__footer{
+.contacts__footer {
     width: max-content;
-    margin-left: -.3rem;
+    margin-left: -0.3rem;
 }
 
-.contacts__footer li{
+.contacts__footer li {
     padding-right: 2rem;
     display: inline-block;
 }
 
-.contacts__footer a{
+.contacts__footer a {
     display: block;
 }
 
-.contacts__footer a *{
+.contacts__footer a * {
     font-size: 2.2rem;
-    
 }
 
-.nav__footer__right .li__desc{
+.nav__footer__right .li__desc {
     color: #5865f2;
     font-size: 1.6rem;
     font-weight: 400;
 }
 
-.nav__footer__right a{
+.nav__footer__right a {
     font-size: 1.6rem;
     color: white;
     font-weight: 400;
+}
+
+.nav__footer__right a:hover {
+    text-decoration: underline;
+    transition: all 0.2s ease-out;
 }
