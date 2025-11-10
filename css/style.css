@@ -8,7 +8,11 @@
 body {
     overflow-x: hidden;
     background-color: black;
-    font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "Lato", sans-serif;
+}
+
+button {
+    font-family: "Lato", sans-serif;
 }
 
 html {
@@ -35,7 +39,7 @@ header {
 
 nav {
     margin: 0 auto;
-    background-color: #5865f2;
+    /* background-color: #5865f2; */
     width: 126rem;
     max-width: 100vw;
     height: inherit;
@@ -119,7 +123,7 @@ button {
     font-size: 14px;
     border: none;
     border-radius: 2rem;
-    font-weight: 100;
+    font-weight: 400;
 }
 
 button:hover {
@@ -128,6 +132,7 @@ button:hover {
 
 button:active {
     box-shadow: 0 1rem 3rem -1.4rem black;
+    transition: all 0.2 ease-out;
 }
 
 /* SECTION GENERIC @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
@@ -135,15 +140,13 @@ button:active {
 section:not(:last-child) {
     width: 100vw;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 section:not(:nth-of-type(5)) .container {
     display: flex;
     justify-content: center;
     align-items: stretch;
+    margin: 0 auto;
     width: var(--container-width);
     padding: var(--section-spacing-vertical) var(--section-spacing-horizontal);
     height: 100%;
@@ -157,44 +160,92 @@ section:not(:nth-of-type(5)) .container {
     background-color: #f32626;
 }
 
+.paired__container__01 .img,
+.paired__container__02 .img,
+.paired__container__03 .img {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 /* SECTION 1 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
-section:nth-of-type(1) {
-    background-color: #5966f2;
+.section__welcome {
+    background-image: url(../imgs/jumbo.png);
+    background-size: contain;
 }
 
-section:nth-of-type(1) .container {
-    background-color: #3040f1;
+.container__welcome {
     flex-direction: column;
+    text-align: center;
 }
 
-section:nth-of-type(1) .container .top {
-    width: 100%;
-    height: 20rem;
+.h1__welcome {
+    font-size: 5.6rem;
+    color: white;
+    font-size: 900;
+    margin-bottom: 4rem;
 }
 
-section:nth-of-type(1) .container .bottom {
-    width: 100%;
-    height: 20rem;
+.p__welcome {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    color: white;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.download__welcome,
+.open__welcome {
+    font-size: 2rem;
+    border-radius: 2rem;
+    padding: 1.6rem 4rem;
+    border-radius: 4rem;
+    display: inline-block;
+    margin: 0 1.5rem;
+}
+
+.download__welcome {
+    background-color: white;
+    color: #23272a;
+}
+
+.open__welcome {
+    background-color: #23272a;
+    color: white;
+}
+
+.download__welcome:hover {
+    color: #7289da;
+    box-shadow: 0 1rem 3rem -1.4rem black;
+}
+
+.open__welcome:hover {
+    background-color: #36393f;
+    box-shadow: 0 1rem 3rem -1.4rem black;
 }
 
 /* SECTION 2 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
-section:nth-of-type(2) {
+.section__02 {
     background-color: white;
 }
 
-section:nth-of-type(2) .container {
+.section__02 .container {
     display: flex;
     justify-content: center;
 }
 
-section:nth-of-type(2) .container .img {
+.section__02 .container .img {
     flex: 3;
 }
 
-section:nth-of-type(2) .container .text {
+.section__02 .container .text {
     flex: 2;
+}
+
+.paired__container__01 .img {
+    background-image: url(../svgs/item1.svg);
 }
 
 /* SECTION 3 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
@@ -205,7 +256,6 @@ section:nth-of-type(3) {
 
 section:nth-of-type(3) .container .img {
     flex: 3;
-    order: 1;
 }
 
 section:nth-of-type(3) .container .text {
@@ -216,6 +266,10 @@ section:nth-of-type(3) .container {
     display: flex;
     justify-content: center;
     width: var(--container-width);
+}
+
+.paired__container__02 .img {
+    background-image: url(../svgs/item2.svg);
 }
 
 /* SECTION 4 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
@@ -236,14 +290,19 @@ section:nth-of-type(4) .container .text {
     flex: 2;
 }
 
+.paired__container__03 .img {
+    background-image: url(../svgs/item3.svg);
+}
+
 /* SECTION 5 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
-section:nth-of-type(5) {
+.section__05 {
     background-color: grey;
     height: 150vh;
 }
 
-section:nth-of-type(5) .container {
+.section__05 .container {
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -252,33 +311,33 @@ section:nth-of-type(5) .container {
     padding: calc(var(--section-spacing-vertical) / 2) calc(var(--section-spacing-horizontal) / 2);
 }
 
-section:nth-of-type(5) .container .text {
+.section__05 .container .text {
     order: -1;
     flex: 1 0 1rem;
 }
 
-section:nth-of-type(5) .container .img {
+.section__05 .container .img {
     flex: 8 0 1rem;
 }
 
 /* SECTION 6 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
-section:nth-of-type(6) {
+.section__06 {
     height: 40vh;
     background-color: grey;
     width: 100vw;
 }
 
-section:nth-of-type(6) .container {
+.section__06 .container {
     flex-direction: column;
     padding: calc(var(--section-spacing-vertical) / 2) calc(var(--section-spacing-horizontal) / 2);
 }
 
-section:nth-of-type(6) .container .text {
+.section__06 .container .text {
     height: 40%;
 }
 
-section:nth-of-type(6) .container .btn {
+.section__06 .container .btn {
     height: 40%;
     background-color: #3040f1;
 }
@@ -303,8 +362,6 @@ footer .container {
     padding: 8rem 0;
 }
 
-
-
 footer .container .bottom {
     width: 100%;
     flex: 2 1 0;
@@ -314,7 +371,6 @@ footer .container .bottom {
     align-items: flex-end;
 }
 
-
 footer .container .bottom .left,
 footer .container .bottom .right {
     height: 100%;
@@ -323,7 +379,7 @@ footer .container .bottom .right {
     align-items: flex-end;
 }
 
-footer .container .bottom .right{
+footer .container .bottom .right {
     justify-content: flex-end;
 }
 
@@ -357,9 +413,9 @@ footer .top .left {
     background-color: #5865f2;
 }
 
-footer .top .right li{
+footer .top .right li {
     height: 100%;
     flex: 1;
     background-color: #f32626;
-    border: .1rem dashed;
+    border: 0.1rem dashed;
 }
